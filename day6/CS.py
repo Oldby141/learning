@@ -7,11 +7,16 @@ class Role:
         self.name = name#r1.name = name实例变量（静态属性），作用域就是实例本身
         self.weapen = weapen
         self.money = money
-        self.ep = ep
+        self.__ep = ep#私有属性
+
+    def __del__(self):
+        print("%s died "%self.name)
 
     def got_shot(self):#类的方法功能 （动态属性）
-        self.ep -= 10
+        self.__ep -= 10
         print("name:%s I got_shot"%self.name)
+        print("name:%s ep:%s"%(self.name,self.__ep))
+
 
     def buy_gun(self,gun_name):
         print("%s just bought %s"%(self.name,gun_name))
@@ -27,3 +32,4 @@ r1.list.append("r1")
 r2 = Role("alx","police","b51")
 r2.list.append("r2")
 print(r1.list,r2.list,Role.list)
+

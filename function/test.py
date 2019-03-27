@@ -23,3 +23,5 @@ class Solution(object):
 a = Solution()
 b = a.combinationSum([2,3,5],8)
 print(b)
+def aa():
+    print("yes")

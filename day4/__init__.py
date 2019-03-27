@@ -1,1 +1,0 @@
-print("in the day4 init")
