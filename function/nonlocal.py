@@ -1,3 +1,4 @@
+#!_*_coding:utf-8_*_
 def make_counter():
     count = 0
 
