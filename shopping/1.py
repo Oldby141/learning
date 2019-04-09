@@ -1,19 +1,21 @@
-def make_counter():
-    count = 0
+while True:
+    try:
+        S = input().strip()
+        list_s = []
+        for i in range(len(S)):
+            list_s.append(S[i])
+        count = 1
+        list = []
+        list.append(list_s)
+        for i in range(len(S)):
+            first = list_s[0]
+            list_s.remove(first)
+            list_s.append(first)
+            s = "".join(list_s)
+            for x in list:
+                if x!=s:
+                    list.append(s)
+        print(len(list))
 
-    def counter():
-        nonlocal count#nonlocal关键字用来在函数或其他作用域中使用外层(非全局)变量。
-        count += 1
-        return count
-
-    return counter
-
-
-def make_counter_test():
-    mc = make_counter()
-    print(mc())
-    print(mc())
-    print(mc())
-
-
-make_counter_test()
+    except:
+        break
