@@ -18,8 +18,8 @@ if __name__ == '__main__':
 
     np.random.seed(0)
     mu1_fact = (0, 0, 0)
-    cov_fact = np.identity(3)#创建方阵 单位阵
-    data1 = np.random.multivariate_normal(mu1_fact, cov_fact, 400)
+    cov_fact = np.identity(3)#创建方阵 单位阵    #协方差矩阵
+    data1 = np.random.multivariate_normal(mu1_fact, cov_fact, 400)#方法用于根据实际情况生成一个多元正态分布矩阵
     mu2_fact = (2, 2, 1)
     cov_fact = np.identity(3)
     data2 = np.random.multivariate_normal(mu2_fact, cov_fact, 100)

@@ -1,6 +1,4 @@
 #!_*_coding:utf-8_*_
-# !/usr/bin/python
-# -*- coding:utf-8 -*-
 
 import numpy as np
 from sklearn.mixture import GaussianMixture
@@ -68,7 +66,7 @@ if __name__ == '__main__':
     plt.scatter(x[:, 0], x[:, 1], s=50, c=y, marker='o', cmap=cm_dark, edgecolors='k')
     plt.scatter(x_test[:, 0], x_test[:, 1], s=60, c=y_test, marker='^', cmap=cm_dark, edgecolors='k')
 
-    p = gmm.predict_proba(grid_test)
+    p = gmm.predict_proba(grid_test)#概率结果
     p = p[:, 0].reshape(x1.shape)
     CS = plt.contour(x1, x2, p, levels=(0.2, 0.5, 0.8), colors=list('rgb'), linewidths=2)
     plt.clabel(CS, fontsize=15, fmt='%.1f', inline=True)

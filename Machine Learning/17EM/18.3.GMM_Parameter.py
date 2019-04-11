@@ -46,7 +46,7 @@ if __name__ == '__main__':
     xpos = np.arange(4)
     ax = plt.axes()
     b1 = ax.bar(xpos-0.3, err, width=0.3, color='#77E0A0')
-    b2 = ax.twinx().bar(xpos, bic, width=0.3, color='#FF8080')
+    b2 = ax.twinx().bar(xpos, bic, width=0.3, color='#FF8080')#ax1.twinx()#产生一个ax1的镜面坐标
     plt.grid(True)
     bic_min, bic_max = expand(bic.min(), bic.max())
     plt.ylim((bic_min, bic_max))

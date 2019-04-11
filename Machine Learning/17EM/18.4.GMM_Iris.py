@@ -68,7 +68,7 @@ if __name__ == '__main__':
 
         change = np.empty((n_types, grid_hat.size), dtype=np.bool)
         for i in range(n_types):
-            change[i] = grid_hat == order[i]
+            change[i] = grid_hat == order[i]#将预测为order[i]的值拿出来
         for i in range(n_types):
             grid_hat[change[i]] = i
 

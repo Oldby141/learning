@@ -8,7 +8,6 @@ import matplotlib.colors
 import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse
 
-print(sys.path)
 def expand(a, b, rate=0.05):
     d = (b - a) * rate
     return a-d, b+d
@@ -34,6 +33,7 @@ if __name__ == '__main__':
 
     # 绘图使用
     colors = '#A0FFA0', '#2090E0', '#FF8080'
+    print(colors)
     cm = mpl.colors.ListedColormap(colors)
     x1_min, x1_max = x[:, 0].min(), x[:, 0].max()
     x2_min, x2_max = x[:, 1].min(), x[:, 1].max()
@@ -62,12 +62,12 @@ if __name__ == '__main__':
     clrs = list('rgbmy')
     for i, cc in enumerate(zip(centers, covs)):
         center, cov = cc
-        value, vector = sp.linalg.eigh(cov)
-        width, height = value[0], value[1]
+        value, vector = sp.linalg.eigh(cov)#特征值特征向量
+        width, height = value[0], value[1]#半短轴，半长轴
         v = vector[0] / sp.linalg.norm(vector[0])
         angle = 180* np.arctan(v[1] / v[0]) / np.pi
         e = Ellipse(xy=center, width=width, height=height,
-                    angle=angle, color=clrs[i], alpha=0.5, clip_box = ax.bbox)
+                    angle=angle, color=clrs[i], alpha=0.5, clip_box = ax.bbox)#ellipse椭圆
         ax.add_artist(e)
 
     ax1_min, ax1_max, ax2_min, ax2_max = plt.axis()
